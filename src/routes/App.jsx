@@ -4,18 +4,20 @@ import '../styles/global.scss';
 import {Layout} from '../containers/Layout'
 import {Login} from '../containers/Login'
 import { RecoveryPassword } from "../containers/RecoveryPassword";
+import {Home} from "../pages/Home"
+import {NotFound} from "../pages/NotFound"
 
 const App = () => {
     return(
         <BrowserRouter>
-            <Routes>
-                <Layout>
-                    <Route path="/" component={Home} />
-                    <Route path="/login" component={Login} />
-                    <Route path="recovery-password" component={RecoveryPassword} />
-                    <Route component={NotFound} />
-                </Layout>
-            </Routes>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="recovery-password" element={<RecoveryPassword />}/>
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </Layout>
         </BrowserRouter>
     );
 }
