@@ -9,7 +9,7 @@ const useInitialState = () => {
     const addToCart = (payload) => {
         setState({
             ...state,
-            cart: [state.cart, payload]
+            cart: [...state.cart, payload]
         });
     };
 
