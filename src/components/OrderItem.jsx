@@ -1,15 +1,16 @@
 import React from 'react';
 import '../styles/OrderItem.scss';
+import close from '@icons/icon_close.png'
 
-const OrderItem = () => {
+const OrderItem = ({product: {title, price, images}}) => {
 	return (
 		<div className="OrderItem">
 			<figure>
-				<img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike" />
+				<img src={images[0]} alt="bike" />
 			</figure>
-			<p>Bike</p>
-			<p>$30,00</p>
-			<img src="./icons/icon_close.png" alt="close" />
+			<p>{title}</p>
+			<p>{price}</p>
+			<img src={close} alt="close" />
 		</div>
 	);
 }
